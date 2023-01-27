@@ -65,3 +65,53 @@ export const addWaitingListEntry = async ({
 
   return response.data;
 };
+
+export const deleteWaitingListEntry = async (date: string, id: string) => {
+  const savedData = await getWaitingListEntries();
+  const findElement = savedData.find((value) => value.date === date);
+
+  const findEntryToRemove = findElement?.entries.find(
+    (element) => element.id === id
+  );
+
+  const filterOutEntryToRemove = findElement?.entries.filter(
+    (v) => v.id !== findEntryToRemove?.id
+  );
+
+  let response;
+
+  if (filterOutEntryToRemove) {
+    response = await waitingListApi.patch(`list/${findElement?.id}`, {
+      date,
+      entries: [...filterOutEntryToRemove],
+    });
+  }
+  return response;
+};
+
+export const updateWaitingListEntry = async (
+  date: string,
+  id: string,
+  entry: Entry
+) => {
+  const savedData = await getWaitingListEntries();
+  const findElement = savedData.find((value) => value.date === date);
+
+  const findEntryToUpdate = findElement?.entries.find(
+    (element) => element.id === id
+  );
+
+  const filterOutEntryToUpdate = findElement?.entries.filter(
+    (v) => v.id !== findEntryToUpdate?.id
+  );
+
+  let response;
+
+  if (filterOutEntryToUpdate) {
+    response = await waitingListApi.patch(`list/${findElement?.id}`, {
+      date,
+      entries: [...filterOutEntryToUpdate, entry],
+    });
+  }
+  return response;
+};

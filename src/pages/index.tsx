@@ -1,6 +1,8 @@
 import {
   addWaitingListEntry,
+  deleteWaitingListEntry,
   getWaitingListEntries,
+  updateWaitingListEntry,
 } from "@/api/waitingListApi";
 import { List } from "@/shared/types";
 import styles from "@/styles/Home.module.css";
@@ -34,6 +36,30 @@ export default function Home() {
     });
   };
 
+  const handleDelete = () => {
+    deleteWaitingListEntry(
+      "26.01.2023",
+      "cb903a86-d89e-4715-a5fd-a2f9081f1328"
+    );
+  };
+
+  const handleUpdate = () => {
+    updateWaitingListEntry(
+      "26.01.2023",
+      "265cf4a2-3369-4325-81ef-8445be9fbe64",
+      {
+        arrival: "2022-12-05T22:00:00Z",
+        id: uuidv4(),
+        owner: "Sophia Nachbarsson",
+        nextEntryId: null,
+        prevEntryId: data?.at(-1)?.entries.at(-1)?.id || null,
+        puppyName: "Blue",
+        requestedService: "nuttering",
+        serviced: true,
+      }
+    );
+  };
+
   useEffect(() => {
     waiting();
   }, []);
@@ -51,10 +77,34 @@ export default function Home() {
           height: 50,
           backgroundColor: "white",
           color: "black",
+          marginRight: "2rem",
         }}
         onClick={handleSubmit}
       >
         Click me to add
+      </button>
+      <button
+        style={{
+          width: 200,
+          height: 50,
+          backgroundColor: "white",
+          color: "red",
+          marginRight: "2rem",
+        }}
+        onClick={handleDelete}
+      >
+        Click me to delete
+      </button>
+      <button
+        style={{
+          width: 200,
+          height: 50,
+          backgroundColor: "white",
+          color: "orange",
+        }}
+        onClick={handleUpdate}
+      >
+        Click me to update
       </button>
     </>
   );
