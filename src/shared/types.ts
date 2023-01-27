@@ -1,6 +1,6 @@
-export type Entries = {
+export type Entry = {
   arrival: string;
-  id: string;
+  id?: string;
   nextEntryId: string | null;
   owner: string;
   prevEntryId: string | null;
@@ -10,6 +10,7 @@ export type Entries = {
 };
 
 export type List = {
+  id?: string;
   date: string;
-  entries: Entries[];
+  entries: Array<Entry>;
 };
