@@ -4,20 +4,18 @@ import {
   getWaitingListEntries,
   updateWaitingListEntry,
 } from "@/api/waitingListApi";
-import { List } from "@/shared/types";
+import Entry from "@/components/Entry/Entry";
+import { Entry as EntryType, List } from "@/shared/types";
 import styles from "@/styles/Home.module.css";
-import { Inter } from "@next/font/google";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
-  const [data, setData] = useState<List[]>();
+  const [waitingListItems, setWaitingListItems] = useState<List[]>();
 
-  const waiting = async () => {
-    setData(await getWaitingListEntries());
+  const getWaitingListData = async () => {
+    setWaitingListItems(await getWaitingListEntries());
   };
 
   const handleSubmit = () => {
@@ -28,7 +26,7 @@ export default function Home() {
         id: uuidv4(),
         owner: "Sophia Nachbarsson",
         nextEntryId: null,
-        prevEntryId: data?.at(-1)?.entries.at(-1)?.id || null,
+        prevEntryId: waitingListItems?.at(-1)?.entries.at(-1)?.id || null,
         puppyName: "Blue",
         requestedService: "nuttering",
         serviced: false,
@@ -43,25 +41,15 @@ export default function Home() {
     );
   };
 
-  const handleUpdate = () => {
-    updateWaitingListEntry(
-      "26.01.2023",
-      "265cf4a2-3369-4325-81ef-8445be9fbe64",
-      {
-        arrival: "2022-12-05T22:00:00Z",
-        id: uuidv4(),
-        owner: "Sophia Nachbarsson",
-        nextEntryId: null,
-        prevEntryId: data?.at(-1)?.entries.at(-1)?.id || null,
-        puppyName: "Blue",
-        requestedService: "nuttering",
-        serviced: true,
-      }
-    );
-  };
+  const handleUpdate = useCallback(
+    (date: string, id: string, entry: EntryType) => {
+      updateWaitingListEntry(date, id, entry);
+    },
+    [updateWaitingListEntry]
+  );
 
   useEffect(() => {
-    waiting();
+    getWaitingListData();
   }, []);
 
   return (
@@ -70,42 +58,38 @@ export default function Home() {
         <title>Puppy SPA</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}></main>
-      <button
-        style={{
-          width: 200,
-          height: 50,
-          backgroundColor: "white",
-          color: "black",
-          marginRight: "2rem",
-        }}
-        onClick={handleSubmit}
-      >
-        Click me to add
-      </button>
-      <button
-        style={{
-          width: 200,
-          height: 50,
-          backgroundColor: "white",
-          color: "red",
-          marginRight: "2rem",
-        }}
-        onClick={handleDelete}
-      >
-        Click me to delete
-      </button>
-      <button
-        style={{
-          width: 200,
-          height: 50,
-          backgroundColor: "white",
-          color: "orange",
-        }}
-        onClick={handleUpdate}
-      >
-        Click me to update
-      </button>
+      <main className={styles.main}>
+        <div className={styles.headlineContainer}>
+          <div className={styles.puppyLogoContainer}>
+            <span role="img" aria-label="🐶" className={styles.puppyLogoSpan}>
+              🐶
+            </span>
+          </div>
+          <h1>Puppy SPA</h1>
+        </div>
+        {waitingListItems?.map((listItem) => {
+          return (
+            <div key={listItem.id}>
+              <h2>{listItem.date}</h2>
+              <div>
+                {listItem.entries.map((entry, idx) => (
+                  <Entry
+                    key={idx}
+                    listEntry={entry}
+                    date={listItem.date}
+                    id={entry.id}
+                    prevEntryId={
+                      waitingListItems?.at(-1)?.entries.at(-1)?.id || null
+                    }
+                    handleDelete={handleDelete}
+                    handleUpdate={handleUpdate}
+                  />
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </main>
     </>
   );
 }

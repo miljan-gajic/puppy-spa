@@ -1,0 +1,44 @@
+.entryContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 700px;
+  border: 1px solid #000;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.entryContainer:last-child {
+  margin-bottom: 5rem;
+}
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entry:first-child {
+  padding-left: 2rem;
+}
+
+.entry__reqService {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.actionButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem 1rem 0;
+}
+
+.actionButtonsContainer button {
+  border: none;
+  background-color: #fff;
+  padding: 0;
+}

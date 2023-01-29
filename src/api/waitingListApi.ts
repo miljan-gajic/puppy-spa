@@ -101,16 +101,22 @@ export const updateWaitingListEntry = async (
     (element) => element.id === id
   );
 
-  const filterOutEntryToUpdate = findElement?.entries.filter(
-    (v) => v.id !== findEntryToUpdate?.id
-  );
+  console.log("ID that is comming in", id);
+
+  const filterOutEntryToUpdate = findElement?.entries.filter((v) => {
+    console.log("existing entry id", v.id);
+    console.log("find", findEntryToUpdate?.id);
+    return v.id !== findEntryToUpdate?.id;
+  });
 
   let response;
+
+  console.log("FROM FEATURE", filterOutEntryToUpdate);
 
   if (filterOutEntryToUpdate) {
     response = await waitingListApi.patch(`list/${findElement?.id}`, {
       date,
-      entries: [...filterOutEntryToUpdate, entry],
+      entries: [...(filterOutEntryToUpdate || []), entry],
     });
   }
   return response;
