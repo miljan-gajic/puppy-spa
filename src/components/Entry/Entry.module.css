@@ -1,0 +1,49 @@
+.entryContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  width: 700px;
+  border: 1px solid #000;
+  border-radius: 1rem;
+  background-color: #f8f8f8;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.entryContainer:last-child {
+  margin-bottom: 5rem;
+}
+
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entry:first-child {
+  padding-left: 2rem;
+}
+
+.entry__reqService {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.actionButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem 1rem 0;
+}
+
+.actionButtonsContainer button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}

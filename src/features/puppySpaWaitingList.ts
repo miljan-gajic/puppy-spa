@@ -86,6 +86,10 @@ export const deleteWaitingListEntry = async (date: string, id: string) => {
       entries: [...filterOutEntryToRemove],
     });
   }
+
+  if (filterOutEntryToRemove?.length === 0) {
+    response = await waitingListApi.delete(`list/${findElement?.id}`);
+  }
   return response;
 };
 
@@ -101,16 +105,16 @@ export const updateWaitingListEntry = async (
     (element) => element.id === id
   );
 
-  const filterOutEntryToUpdate = findElement?.entries.filter(
-    (v) => v.id !== findEntryToUpdate?.id
-  );
+  const filterOutEntryToUpdate = findElement?.entries.filter((v) => {
+    return v.id !== findEntryToUpdate?.id;
+  });
 
   let response;
 
   if (filterOutEntryToUpdate) {
     response = await waitingListApi.patch(`list/${findElement?.id}`, {
       date,
-      entries: [...filterOutEntryToUpdate, entry],
+      entries: [...(filterOutEntryToUpdate || []), entry],
     });
   }
   return response;

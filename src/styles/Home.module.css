@@ -1,2 +1,37 @@
 .main {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headlineContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  padding: 1.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.headlineContainer h1 {
+  color: #444;
+}
+
+.puppyLogoSpan {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji,
+    "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
+  line-height: 1em;
+  white-space: nowrap;
+}
+
+.puppyLogoContainer {
+  height: 78px;
+  width: 78px;
+  font-size: 78px;
+  line-height: 1;
+  margin-left: 0px;
+  color: black;
 }

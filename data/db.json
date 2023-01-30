@@ -15,72 +15,68 @@
           "nextEntryId": "e9e365b7-8588-4205-bc03-b71cab3c1a8a"
         },
         {
-          "id": "7fb8834f-810c-4a47-ade6-ab7999c0167d",
-          "arrival": "2022-12-05T11:48:29Z",
-          "owner": "Jill Doe",
-          "puppyName": "Fluffy",
-          "requestedService": "Full Body Shave",
-          "serviced": false,
-          "prevEntryId": "e9e365b7-8588-4205-bc03-b71cab3c1a8a",
-          "nextEntryId": "70569642-3aca-4c9d-b72b-ca640a53e6a7"
-        },
-        {
-          "id": "70569642-3aca-4c9d-b72b-ca640a53e6a7",
           "arrival": "2022-12-05T13:03:01Z",
+          "id": "70569642-3aca-4c9d-b72b-ca640a53e6a7",
           "owner": "Diane de Poitiers",
+          "nextEntryId": null,
+          "prevEntryId": "5172d583-f89d-4820-b98d-343a0a58f116",
           "puppyName": "Marie",
           "requestedService": "Exotic Hairdo",
-          "serviced": false,
-          "prevEntryId": "7fb8834f-810c-4a47-ade6-ab7999c0167d",
-          "nextEntryId": null
+          "serviced": false
         },
         {
-          "id": "e9e365b7-8588-4205-bc03-b71cab3c1a8a",
           "arrival": "2022-12-05T12:01:40Z",
+          "id": "e9e365b7-8588-4205-bc03-b71cab3c1a8a",
           "owner": "Bob Hope",
+          "nextEntryId": null,
+          "prevEntryId": "67e7e1ca-7eb5-47f5-b528-d66a619d4a42",
           "puppyName": "Paws",
           "requestedService": "Nail Clipping",
-          "serviced": false,
-          "prevEntryId": "45658a88-6441-46b2-933a-23817d2c1fbc",
-          "nextEntryId": "7fb8834f-810c-4a47-ade6-ab7999c0167d"
+          "serviced": false
+        },
+        {
+          "arrival": "2022-12-05T11:48:29Z",
+          "id": "7fb8834f-810c-4a47-ade6-ab7999c0167d",
+          "owner": "Jill Doe",
+          "nextEntryId": null,
+          "prevEntryId": "67e7e1ca-7eb5-47f5-b528-d66a619d4a42",
+          "puppyName": "Fluffy",
+          "requestedService": "Full Body Shave",
+          "serviced": true
         }
       ]
     },
     {
-      "date": "26.01.2023",
+      "date": "2023-01-26",
       "entries": [
         {
+          "arrival": "2022-12-05T22:00:00Z",
           "id": "5172d583-f89d-4820-b98d-343a0a58f116",
-          "arrival": "2022-12-05T22:00:00Z",
-          "nextEntryId": null,
           "owner": "Sophia Nachbarsson",
-          "prevEntryId": "cb903a86-d89e-4715-a5fd-a2f9081f1328",
+          "nextEntryId": null,
+          "prevEntryId": "5172d583-f89d-4820-b98d-343a0a58f116",
           "puppyName": "Blue",
           "requestedService": "nuttering",
           "serviced": false
-        },
-        {
-          "id": "3508324c-c1fb-4199-b5a0-e7e9af3d4691",
-          "arrival": "2022-12-05T22:00:00Z",
-          "nextEntryId": null,
-          "owner": "Sophia Nachbarsson",
-          "prevEntryId": "265cf4a2-3369-4325-81ef-8445be9fbe64",
-          "puppyName": "Blue",
-          "requestedService": "nuttering",
-          "serviced": false
-        },
+        }
+      ],
+      "id": "aSw43vj"
+    },
+    {
+      "date": "2023-01-29",
+      "entries": [
         {
           "arrival": "2022-12-05T22:00:00Z",
-          "id": "ff483342-7835-4d98-b427-afa5c82a811f",
+          "id": "67e7e1ca-7eb5-47f5-b528-d66a619d4a42",
           "owner": "Sophia Nachbarsson",
           "nextEntryId": null,
-          "prevEntryId": "3508324c-c1fb-4199-b5a0-e7e9af3d4691",
+          "prevEntryId": "67e7e1ca-7eb5-47f5-b528-d66a619d4a42",
           "puppyName": "Blue",
           "requestedService": "nuttering",
           "serviced": true
         }
       ],
-      "id": "aSw43vj"
+      "id": "AfMqOLW"
     }
   ]
 }
