@@ -1,4 +1,6 @@
 import { Entry } from "@/shared/types";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 import PetsIcon from "@mui/icons-material/Pets";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useCallback, useState } from "react";
@@ -29,6 +31,7 @@ const Entry: React.FC<Props> = ({
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const isItChecked = e.currentTarget.checked;
       setChangeServiced(isItChecked);
+      console.log("this is called");
       handleUpdate(date, id || "", {
         arrival: listEntry.arrival,
         id: listEntry.id,
@@ -47,8 +50,15 @@ const Entry: React.FC<Props> = ({
     handleDelete(date, id || "");
   }, [date, id]);
 
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: id as string });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
   return (
-    <>
+    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
       <div className={styles.entryContainer}>
         <div className={styles.entry}>
           <PetsIcon fontSize="medium" />
@@ -79,7 +89,7 @@ const Entry: React.FC<Props> = ({
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
