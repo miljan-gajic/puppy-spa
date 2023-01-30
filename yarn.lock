@@ -457,6 +457,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-form@^4.0.2":
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-form/-/react-form-4.0.2.tgz#80111ad1dc7f5501fc646affbf659972c8a0c3da"
+  integrity sha512-NEE2Zn9t5StOBsYTe8I9eu9ys61g1GdfudI4ZAPwoyAEOg6OWukhrh/ZPuz50dadFaQG+9c3p9yq7abRRqZP9g==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-is@^16.7.1 || ^17.0.0":
   version "17.0.3"
   resolved "https://registry.yarnpkg.com/@types/react-is/-/react-is-17.0.3.tgz#2d855ba575f2fc8d17ef9861f084acc4b90a137a"
@@ -2614,6 +2621,11 @@ react-dom@18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-form@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-form/-/react-form-4.0.1.tgz#f442adae7142261a6650a63001c49827e4317ca5"
+  integrity sha512-vhsCuBLZJYjm6vd8TBxIhIWeB/8Jg4mmmiR3Zj+1zIGBM39qJf1CLqekadLp0J9NeW0EsZxUnBtbmEnMeZ/7Pw==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
