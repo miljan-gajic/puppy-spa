@@ -1,5 +1,4 @@
 import { Entry } from "@/shared/types";
-import AddIcon from "@mui/icons-material/Add";
 import PetsIcon from "@mui/icons-material/Pets";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useCallback, useState } from "react";
@@ -10,7 +9,7 @@ type Props = {
   date: string;
   id?: string;
   prevEntryId: string | null;
-  handleDelete: () => void;
+  handleDelete: (date: string, id: string) => void;
   handleUpdate: (date: string, id: string, entry: Entry) => void;
 };
 
@@ -38,11 +37,15 @@ const Entry: React.FC<Props> = ({
         prevEntryId,
         puppyName: listEntry.puppyName,
         requestedService: listEntry.requestedService,
-        serviced: changeServiced,
+        serviced: isItChecked,
       });
     },
     [handleUpdate, listEntry, changeServiced, prevEntryId]
   );
+
+  const handleRemoveEntry = useCallback(() => {
+    handleDelete(date, id || "");
+  }, [date, id]);
 
   return (
     <>
@@ -66,13 +69,13 @@ const Entry: React.FC<Props> = ({
           />
         </label>
         <div className={styles.entry}>{listEntry.owner}</div>
-        <div className={styles.actionButtonsContainer}>
+        <div className={styles.actionButtonsContainer} title="Remove Entry">
           <button>
-            {" "}
-            <AddIcon fontSize="large" />
-          </button>
-          <button>
-            <RemoveIcon fontSize="large" />
+            <RemoveIcon
+              fontSize="large"
+              color="error"
+              onClick={handleRemoveEntry}
+            />
           </button>
         </div>
       </div>
