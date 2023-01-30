@@ -1,8 +1,11 @@
 .openAddPetSectionContainer {
   align-self: center;
+  width: 1000px;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  margin-left: -32rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .openAddPetSectionContainer button {
@@ -27,4 +30,10 @@
   border-color: #3f51b5;
   background-color: rgba(63, 81, 181, 0.1);
   cursor: pointer;
+}
+
+.searchInput {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 1rem 2rem;
 }
