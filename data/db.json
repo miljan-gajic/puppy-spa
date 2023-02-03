@@ -15,16 +15,6 @@
           "nextEntryId": "e9e365b7-8588-4205-bc03-b71cab3c1a8a"
         },
         {
-          "arrival": "2022-12-05T12:01:40Z",
-          "id": "e9e365b7-8588-4205-bc03-b71cab3c1a8a",
-          "owner": "Bob Hope",
-          "nextEntryId": null,
-          "prevEntryId": "67e7e1ca-7eb5-47f5-b528-d66a619d4a42",
-          "puppyName": "Paws",
-          "requestedService": "Nail Clipping",
-          "serviced": false
-        },
-        {
           "arrival": "2022-12-05T11:48:29Z",
           "id": "7fb8834f-810c-4a47-ade6-ab7999c0167d",
           "owner": "Jill Doe",
@@ -43,6 +33,16 @@
           "puppyName": "Marie",
           "requestedService": "Exotic Hairdo",
           "serviced": true
+        },
+        {
+          "arrival": "2022-12-05T12:01:40Z",
+          "id": "e9e365b7-8588-4205-bc03-b71cab3c1a8a",
+          "owner": "Bob Hope",
+          "nextEntryId": null,
+          "prevEntryId": "9ef18eef-d9b9-4929-ac87-5a5bb441e586",
+          "puppyName": "Paws",
+          "requestedService": "Nail Clipping",
+          "serviced": false
         }
       ]
     },
@@ -50,18 +50,12 @@
       "date": "2023-02-03",
       "entries": [
         {
+          "arrival": "2023-02-03",
           "id": "9ef18eef-d9b9-4929-ac87-5a5bb441e586",
-          "arrival": "2023-02-03",
           "owner": "Miljan",
+          "nextEntryId": null,
+          "prevEntryId": "9ef18eef-d9b9-4929-ac87-5a5bb441e586",
           "puppyName": "Blue",
-          "requestedService": "Grooming",
-          "serviced": false
-        },
-        {
-          "id": "c44e3e3c-c494-4560-9664-a07c62ae34ff",
-          "arrival": "2023-02-03",
-          "owner": "Miljan",
-          "puppyName": "Goblin",
           "requestedService": "Grooming",
           "serviced": false
         }

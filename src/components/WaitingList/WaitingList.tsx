@@ -23,6 +23,7 @@ const WaitingList = () => {
   const [search, setSearch] = useState("");
   const [openAddingPet, setOpenAddingPet] = useState<boolean>();
   const [showOnlyServiced, setShowOnlyServiced] = useState<boolean>();
+  const [moving, setMoving] = useState(false);
 
   const getWaitingListData = async () => {
     const itemsFromDb = await getWaitingListEntries();
@@ -75,6 +76,10 @@ const WaitingList = () => {
     });
   }
 
+  const handleOnDraStart = (e: any, listItem: List) => {
+    setMoving(true);
+  };
+
   const handleOnDragEnd = (e: any, listItem: List) => {
     const { active, over } = e;
     if (active && over && active?.id !== over?.id) {
@@ -107,6 +112,7 @@ const WaitingList = () => {
       });
 
       setWaitingListItems(movedList);
+      setMoving(false);
     }
   };
 
@@ -177,6 +183,7 @@ const WaitingList = () => {
               key={listItem.id}
               collisionDetection={closestCenter}
               onDragEnd={(e) => handleOnDragEnd(e, listItem)}
+              onDragStart={(e) => handleOnDraStart(e, listItem)}
             >
               {listItem.entries.length > 0 && (
                 <h2>{format(new Date(listItem.date), "dd. MMMM yyyy.")}</h2>
@@ -191,6 +198,7 @@ const WaitingList = () => {
                     listEntry={entry}
                     date={listItem.date}
                     id={entry.id}
+                    isMoving={moving}
                     prevEntryId={
                       waitingListItems?.at(-1)?.entries.at(-1)?.id || null
                     }
