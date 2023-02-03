@@ -7,9 +7,13 @@ import styles from "./AddingPetSection.module.css";
 
 type Props = {
   submit: (entry: Entry) => void;
+  handleSetOpenAddingPetSection: () => void;
 };
 
-const AddingPetSection: React.FC<Props> = ({ submit }) => {
+const AddingPetSection: React.FC<Props> = ({
+  submit,
+  handleSetOpenAddingPetSection,
+}) => {
   const {
     Form,
     meta: { isSubmitting, canSubmit },
@@ -23,8 +27,8 @@ const AddingPetSection: React.FC<Props> = ({ submit }) => {
         prevId: null,
         serviced: false,
       };
-      console.log("Huzzah!", combined);
       submit(combined as Entry);
+      handleSetOpenAddingPetSection();
     },
     // debugForm: true,
   });

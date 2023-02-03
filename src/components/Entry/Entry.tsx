@@ -26,6 +26,12 @@ const Entry: React.FC<Props> = ({
   const [changeServiced, setChangeServiced] = useState<boolean>(
     listEntry.serviced
   );
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id: id as string });
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
 
   const handleOnChangeServiced = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -50,13 +56,6 @@ const Entry: React.FC<Props> = ({
     handleDelete(date, id || "");
   }, [date, id]);
 
-  const { attributes, listeners, setNodeRef, transform, transition } =
-    useSortable({ id: id as string });
-  const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
-  };
-
   return (
     <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
       <div className={styles.entryContainer}>
@@ -75,7 +74,7 @@ const Entry: React.FC<Props> = ({
             name="serviced"
             id="serviced"
             checked={changeServiced || false}
-            onChange={handleOnChangeServiced}
+            onChange={(e) => handleOnChangeServiced(e)}
           />
         </label>
         <div className={styles.entry}>{listEntry.owner}</div>

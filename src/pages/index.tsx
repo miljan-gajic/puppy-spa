@@ -9,24 +9,9 @@ export default function Home() {
         <title>Puppy SPA</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className={styles.menuBar}>
-        <div className={styles.headlineContainer}>
-          <div className={styles.puppyLogoContainer}>
-            <span role="img" aria-label="🐶" className={styles.puppyLogoSpan}>
-              🐶
-            </span>
-          </div>
-          <h2>Puppy SPA waiting list</h2>
-          <div className={styles.puppyLogoContainer}>
-            <span role="img" aria-label="🐶" className={styles.puppyLogoSpan}>
-              🐶
-            </span>
-          </div>
-        </div>
-      </header>
-      <main className={styles.main}>
+      <section className={styles.main}>
         <WaitingList />
-      </main>
+      </section>
     </>
   );
 }

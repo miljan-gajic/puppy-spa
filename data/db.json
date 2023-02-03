@@ -47,52 +47,26 @@
       ]
     },
     {
-      "date": "2023-01-26",
+      "date": "2023-02-03",
       "entries": [
         {
-          "arrival": "2022-12-05T22:00:00Z",
-          "id": "5172d583-f89d-4820-b98d-343a0a58f116",
-          "owner": "Sophia Nachbarsson",
-          "nextEntryId": null,
-          "prevEntryId": "5172d583-f89d-4820-b98d-343a0a58f116",
+          "id": "9ef18eef-d9b9-4929-ac87-5a5bb441e586",
+          "arrival": "2023-02-03",
+          "owner": "Miljan",
           "puppyName": "Blue",
-          "requestedService": "nuttering",
+          "requestedService": "Grooming",
+          "serviced": false
+        },
+        {
+          "id": "c44e3e3c-c494-4560-9664-a07c62ae34ff",
+          "arrival": "2023-02-03",
+          "owner": "Miljan",
+          "puppyName": "Goblin",
+          "requestedService": "Grooming",
           "serviced": false
         }
       ],
-      "id": "aSw43vj"
-    },
-    {
-      "date": "2023-01-29",
-      "entries": [
-        {
-          "arrival": "2022-12-05T22:00:00Z",
-          "id": "67e7e1ca-7eb5-47f5-b528-d66a619d4a42",
-          "owner": "Sophia Nachbarsson",
-          "nextEntryId": null,
-          "prevEntryId": "67e7e1ca-7eb5-47f5-b528-d66a619d4a42",
-          "puppyName": "Blue",
-          "requestedService": "nuttering",
-          "serviced": true
-        }
-      ],
-      "id": "AfMqOLW"
-    },
-    {
-      "date": "2023-01-30",
-      "entries": [
-        {
-          "arrival": "2023-01-30",
-          "id": "1da41e5e-5b44-453e-aedd-7b35f75f01a0",
-          "owner": "Miljan",
-          "nextEntryId": null,
-          "prevEntryId": "1da41e5e-5b44-453e-aedd-7b35f75f01a0",
-          "puppyName": "Owens",
-          "requestedService": "Cutting",
-          "serviced": true
-        }
-      ],
-      "id": "zVJKC3p"
+      "id": "agHbtB9"
     }
   ]
 }
