@@ -1,8 +1,10 @@
-.form {
-  width: 500px;
-  margin-inline: auto;
-  margin-bottom: 5rem;
+.openAddPetSectionContainer {
+  margin-top: 7rem;
+  margin-bottom: 2rem;
   padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #f8f8f8;
   border: 1px solid #f8f8f8;
   border-radius: 1rem;
@@ -10,10 +12,11 @@
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.addButton button {
-  min-width: 100px;
-  max-width: 170px;
+.openAddPetSectionContainer button {
+  min-width: 150px;
+  max-width: 250px;
   display: block;
+  margin: 1em;
   padding: 1em 2em;
   border: none;
   background: none;
@@ -27,8 +30,14 @@
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.addButton button:hover {
+.openAddPetSectionContainer button:hover {
   border-color: #3f51b5;
   background-color: rgba(63, 81, 181, 0.1);
   cursor: pointer;
+}
+
+.searchInput {
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 1rem 2rem;
 }
